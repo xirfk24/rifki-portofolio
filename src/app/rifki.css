@@ -1,0 +1,157 @@
+/* Rifki site-scoped styles — fonts, colors, keyframes, scrollbar */
+
+/* Design tokens */
+:root {
+  --color-main-black: #0b0b0b;
+  --color-main-dark: #2c2c2c;
+  --color-main-orange: #ffab00;
+  --color-main-white: #f5f5f5;
+}
+
+/* Font face declarations for local fonts from the source site */
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/4473ecc91f70f139-s.p.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/463dafcda517f24f-s.p.woff") format("woff");
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/13971731025ec697-s.p.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/7ab938503e4547a1-s.woff2") format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/fc727f226c737876-s.p.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/ae822095a172cc5c-s.woff2") format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/3c70c5716f1730b3-s.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Covered By Your Grace";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/78bc89dafd10ae87-s.p.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Covered By Your Grace";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/sites/rifki/fonts/ff2fcc32bb54d74c-s.woff2") format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Page shell — matches source: body font Arial, page max-w-screen-2xl mx-auto */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rifki-page {
+  min-height: 100svh;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  max-width: 1536px; /* max-w-screen-2xl */
+  margin: 0 auto;
+  background: var(--color-main-black);
+  position: relative;
+  overflow-x: clip;
+  color: var(--color-main-white);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #eb5e28;
+  border-radius: 4px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #eb5e28 #1f2937;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Cursor none for footer */
+.cursor-none {
+  cursor: none;
+}
+
+/* h-svh support */
+.h-svh {
+  height: 100svh;
+}
+.min-h-svh {
+  min-height: 100svh;
+}
